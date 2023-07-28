@@ -1,0 +1,49 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration Form</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- Fontawesome CDN Link For Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  </head>
+  <body>
+    <form action="/registration/" method='POST'>
+        {% csrf_token %}
+      <h2>Registeration Form</h2>
+      {% if msg %}
+      <h1 style="color: white;">{{msg}}</h1>
+      {% endif %}
+      <div class="form-group fullname">
+        <label for="fullname"> Name:-</label>
+        <input type="text" id="fullname" placeholder="Enter Your Name" name='name'>
+      </div>
+      <div class="form-group email">
+        <label for="email">Email Address:-</label>
+        <input type="text" id="email" placeholder="Enter Your Email Address" name='email'>
+      </div>
+
+      <div class="form-group email">
+        <label for="email">Phone:-</label>
+        <input type="text" id="email" placeholder="Enter Your Phone" name='phone'>
+      </div>
+      <div class="form-group password">
+        <label for="password">Password:-</label>
+        <input type="password" id="password" placeholder="Enter Your password" name='password'>
+      </div>
+      <div class="form-group date">
+        <label for="date">Company:-</label>
+        <input type="text" id="date" placeholder="Enter Your Company" name='company'>
+      </div>
+      
+      <div class="form-group submit-btn">
+        <input type="submit" value="Submit">
+      </div>
+      <div class="link">
+        
+        <a href="login/">Login now</a>
+     </div>
+    </form>
+  </body>
+</html>
