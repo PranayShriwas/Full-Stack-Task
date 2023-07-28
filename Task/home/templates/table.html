@@ -1,1 +1,53 @@
-    
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Table To Display Registerted Data</h2>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Company</th>
+
+
+    </tr>
+    {% if form %}
+    {% comment %} {% for i in form %} {% endcomment %}
+    <tr>
+      <td>{{form.Name}}</td>
+      <td>{{form.Email}}</td>
+      <td>{{form.Phone}}</td>
+      <td>{{form.Company}}</td>
+      </tr>
+    {% comment %} {% endfor %} {% endcomment %}
+    {% endif %}
+
+  </table>
+
+</body>
+
+</html>
